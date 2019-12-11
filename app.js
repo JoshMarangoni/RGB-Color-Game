@@ -2,25 +2,20 @@ var squares = document.querySelectorAll(".square");
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
-var resetButton = document.querySelector("#reset")
-var modeButtons = document.querySelectorAll(".mode")
-
+var resetButton = document.querySelector("#reset");
+var modeButtons = document.querySelectorAll(".mode");
 var numSquares = 6;
-var colors = generateRandomColors(numSquares);
-var pickedColor = pickColor();
-initializeSquares();
+var colors = [];
+var pickedColor;
 
-for (var i=0; i < modeButtons.length; i++) {
-    modeButtons[i].addEventListener("click", function() {
-        modeButtons[0].classList.remove("selected");
-        modeButtons[1].classList.remove("selected");
-        this.classList.add("selected");
-        this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
-        reset();
-    });
+init();
+
+function init() {
+    initializeModeButtons();
+    initializeSquares();
+    resetButton.addEventListener("click", reset);
+    reset();
 }
-
-resetButton.addEventListener("click", reset);
 
 function reset() { 
     colors = generateRandomColors(numSquares);
@@ -38,6 +33,18 @@ function reset() {
             squares[i].style.display = "none";
         }
         
+    }
+}
+
+function initializeModeButtons() {
+    for (var i=0; i < modeButtons.length; i++) {
+        modeButtons[i].addEventListener("click", function() {
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
+            reset();
+        });
     }
 }
 
