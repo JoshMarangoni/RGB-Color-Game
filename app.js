@@ -32,7 +32,6 @@ function reset() {
         } else {
             squares[i].style.display = "none";
         }
-        
     }
 }
 
@@ -66,7 +65,6 @@ function initializeSquares() {
                 messageDisplay.textContent = "Try Again"
             }
         })
-        
     }
 }
 
