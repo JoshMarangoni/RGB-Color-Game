@@ -4,7 +4,7 @@
 An interactive game where a user guesses the given RBG color given pixel values.
 
 ### Reason for building
-I completed this project mainly to practice my front-end web development skills, and also because of my interest in computer vision, in which a thorough understanding of RBG color space is useful. 
+I completed this project as part of The FullStack Web Development Bootcamp by Colt Steele, mainly to practice my front-end web development skills. This is also a great tool for computer vision developers wanting to familarize themnselves with the RBG color space. 
 
 ### What I learned
 - Manipulation of the DOM
